@@ -1,0 +1,13 @@
+{
+    "name": "federico-villarruel-portfolio",
+    "scripts": {
+        "dev": "vite",
+        "build": "tsc --noEmit && vite build"
+    },
+    "type": "module",
+    "devDependencies": {
+        "@types/node": "^26.2.0",
+        "typescript": "^7.0.2",
+        "vite": "^7.3.6"
+    }
+}

@@ -1,0 +1,8 @@
+# Visual Studio
+.vs/
+
+# Dependencias
+node_modules/
+
+# Archivos generados por Vite
+dist/

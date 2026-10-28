@@ -1,0 +1,211 @@
+﻿.card.project-card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    border: 2px solid var(--color-line);
+    transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+    .card.project-card:hover {
+        border-color: var(--color-greenYellow);
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px var(--color-glass-greenYellow);
+    }
+
+/* Preview */
+
+.project-card-preview {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: var(--color-shadowGrey);
+}
+
+    .project-card-preview::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 2;
+        pointer-events: none;
+        box-shadow: inset 0 0 10px var(--color-inkBlack);
+    }
+
+    .project-card-preview img,
+    .project-card-preview video {
+        position: absolute;
+        inset: 0;
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .project-card-preview img {
+        opacity: 1;
+        transition: opacity 0.3s ease;
+    }
+
+    .project-card-preview video {
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+.card.project-card:hover .project-card-preview.has-gameplay img {
+    opacity: 0;
+}
+
+.card.project-card:hover .project-card-preview.has-gameplay video {
+    opacity: 1;
+}
+
+/* Body */
+
+.project-card-body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    min-width: 0;
+    padding: 25px;
+}
+
+.project-card-classification {
+    margin: 0 0 5px;
+    color: var(--color-greenYellow);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.project-card-body h3 {
+    margin: 0;
+    font-size: 2rem;
+    line-height: 2.2rem;
+}
+
+.project-card-technologies {
+    margin: 5px 0 0;
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.project-card-resume {
+    margin: 20px 0 0;
+    color: var(--color-text-muted);
+}
+
+/* Topics */
+
+.project-card-topics {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    gap: 10px;
+    min-width: 0;
+    margin: auto 0 0;
+    padding: 20px 0 0;
+    list-style: none;
+}
+
+.project-card-topic {
+    flex: 0 0 auto;
+    padding: 7px 12px;
+    background: var(--color-shadowGrey);
+    border: 1px solid var(--color-line);
+    border-radius: 999px;
+    color: var(--color-text);
+    font-size: 0.85rem;
+    line-height: 1.2rem;
+    white-space: nowrap;
+}
+
+/* Topics Overflow */
+
+.project-card-topics-container {
+    display: flex;
+    align-items: stretch;
+    gap: 10px;
+    min-width: 0;
+    margin: auto 0 0;
+    padding: 20px 0 0;
+}
+
+.project-card-topics-list {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.project-card-overflow {
+    position: relative;
+    flex: 0 0 auto;
+    align-self: stretch;
+}
+
+    .project-card-overflow[hidden] {
+        display: none;
+    }
+
+.project-card-overflow-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    padding: 0;
+    border: 1px solid var(--color-line);
+    border-radius: 999px;
+    background: var(--color-shadowGrey);
+    color: var(--color-text);
+    font-weight: 600;
+    cursor: pointer;
+    transition: border-color .2s ease, background .2s ease, transform .2s ease;
+}
+
+    .project-card-overflow-button:hover {
+        border-color: var(--color-greenYellow);
+        background: var(--color-inkBlack);
+        transform: scale(1.05);
+    }
+
+    .project-card-overflow-button::before {
+        content: "";
+        width: 3px;
+        height: 3px;
+        border-radius: 50%;
+        background: currentColor;
+        box-shadow: 7px 0 currentColor, 14px 0 currentColor;
+        transform: translateX(-7px);
+    }
+
+.project-card-overflow-dropdown {
+    position: absolute;
+    right: 0;
+    bottom: calc(100% + 10px);
+    display: none;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    align-content: flex-start;
+    gap: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 2px solid var(--color-line);
+    border-radius: 10px;
+    background: var(--color-inkBlack);
+    list-style: none;
+}
+
+.project-card-overflow.open
+.project-card-overflow-dropdown {
+    display: flex;
+}
+
+.project-card-overflow-dropdown .project-card-topic {
+    flex: 0 0 auto;
+    width: fit-content;
+}
