@@ -4,14 +4,14 @@ import { Section } from "../../Section";
 
 export class Contact extends Section {
 
-    private static readonly s_email = "federiconicolasvillarruel@gmail.com";
+    private static readonly s_email = "villarruel.n.federico@gmail.com";
     private static readonly s_phone = "+5491133822494";
 
     private static readonly s_linkedIn =
-        "https://www.linkedin.com/in/tu-perfil";
+        "https://www.linkedin.com/in/federico-villarruel-18550b24a/";
 
     private static readonly s_gitHub =
-        "https://github.com/tu-usuario";
+        "https://github.com/Villa-Fede";
 
     constructor() {
         super("Contacto", "");
