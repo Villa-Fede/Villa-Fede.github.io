@@ -19,7 +19,7 @@
     max-height: inherit;
 }
 
-@media (max-width: 720px) {
+@media (max-width: 720px), (max-height: 720px) {
     .project-panel {
         width: 100dvw;
         height: 100dvh;
